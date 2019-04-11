@@ -1,4 +1,5 @@
 import { FETCH } from './types';
+import { FETCH_ERROR } from './types';
 import { config } from '../config';
 
 export const fetchAction = (resource) => dispatch => {
@@ -8,7 +9,12 @@ export const fetchAction = (resource) => dispatch => {
         .then(resp => resp.json())
         .then(data => dispatch({
             type: FETCH,
-            payload: data.data.results
+            payload: {
+                data: data.data.results,
+                error: false
+            }
+            }))
+        .catch(e => {
+            console.log(e);
         })
-    );
 }

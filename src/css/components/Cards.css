@@ -11,6 +11,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    cursor: crosshair;
 }
 
 .img-size{
@@ -26,10 +27,15 @@
 .item-container{
     margin: 15px 25px 0px 0px;
     max-width: 200px;
+    animation: animate 250ms ease-in-out;
 }
 
 .item-container > p{
+    position: relative;
     letter-spacing: 1.1px;
+    z-index: 1;
+    transform: translateY(-50px);
+    transition: transform 250ms ease-in;
 }
 
 .item-container > img{
@@ -37,14 +43,38 @@
     box-shadow: none;
     transform: rotate3d(0, 1, 0, 25deg);
     transform-style: preserve-3d;
+    position: relative;
+    z-index: 10;
 }
 
-.item-container > img:hover{
+.item-container:hover > img{
     box-shadow: inset 0px 0px 15px 5px rgba(0,66,65,0.8);
     transform: rotate3d(0, 1, 0, 0deg);
 }
 
+.item-container:hover > p{
+    transform: translateY(0);
+}
 
+.gifHolder{
+    width: 100%;
+    height: 0;
+    padding-bottom: 11%;
+    position: relative;
+}
+
+.gifHolder > .gifStyle{
+    position: absolute;
+}
+
+@keyframes animate{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0
+    }
+}
 
 
 

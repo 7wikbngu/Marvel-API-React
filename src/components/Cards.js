@@ -23,7 +23,6 @@ class Cards extends Component {
         console.log("Cards.js",[startIndex,endIndex]);
         
         if(items !== undefined){
-
             paginationItems = items.slice(startIndex, endIndex + 1);
             postitems = paginationItems.map(item => (
                 <div key={item.id} className="item-container">
@@ -32,6 +31,12 @@ class Cards extends Component {
                     <p className="text-center text-white text-uppercase font-weight-bold mt-2">{item.name || item.title}</p>
                 </div>
             ));
+        // }else if(this.props.errorCheck){
+        //     postitems = (
+        //         <div className="gifHolder">
+        //             <iframe title="GIF" src="https://giphy.com/embed/1zSz5MVw4zKg0" width="100%" height="100%" className="gifStyle giphy-embed" frameBorder="0" allowFullScreen></iframe>
+        //         </div>
+        //     );
         }else {
             postitems = (
                 <Loading />
@@ -40,7 +45,7 @@ class Cards extends Component {
         
     return(
         <Fragment>
-            <section className="items-container">
+            <section className="items-container pt-5">
                 { postitems }
             </section>
             <Pagination items={this.props.items}/>
@@ -52,13 +57,14 @@ class Cards extends Component {
 Cards.propTypes = {
     fetchAction: PropTypes.func.isRequired,
     items: PropTypes.object.isRequired,
-    startIndex: PropTypes.number,
-    lastIndex: PropTypes.number
+    index: PropTypes.object,
+    errorCheck: PropTypes.bool
 };
 
 const mapStatetoProps = state => ({
     items: state.items,
-    index: state.pager.index
+    index: state.pager.index,
+    errorCheck: state.pager.error
 });
 
 export default connect(mapStatetoProps, { fetchAction, paginationAction })(Cards);
