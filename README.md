@@ -1,3 +1,6 @@
+#  Marvel API React
+Simple React app using Marvel API made for learning purposes only.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
