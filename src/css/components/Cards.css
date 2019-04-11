@@ -1,11 +1,12 @@
-.characters-container{
+.items-container{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     z-index: 10;
     /* background-image: url('../../assets/background.jpg'); */
-    background-color: #001B26;
+    background: linear-gradient(to left, #BDBBBE 0%, #9D9EA3 100%), radial-gradient(88% 271%, rgba(255, 255, 255, 0.25) 0%, rgba(254, 254, 254, 0.25) 1%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(50% 100%, rgba(255, 255, 255, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%);
+    background-blend-mode: normal, lighten, soft-light;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -15,14 +16,42 @@
 .img-size{
     height: 250px;
     width: 200px; 
+    border-radius: 5px;
 }
 
 .logo-size{
-    height: 75px;
+    height: 50px;
 }
 
-.character-container{
-    margin: 15px 10px;
-    max-width: 50%;
-    
+.item-container{
+    margin: 15px 25px 0px 0px;
+    max-width: 200px;
+}
+
+.item-container > p{
+    letter-spacing: 1.1px;
+}
+
+.item-container > img{
+    transition: all 250ms ease-in-out;
+    box-shadow: none;
+    transform: rotate3d(0, 1, 0, 25deg);
+    transform-style: preserve-3d;
+}
+
+.item-container > img:hover{
+    box-shadow: inset 0px 0px 15px 5px rgba(0,66,65,0.8);
+    transform: rotate3d(0, 1, 0, 0deg);
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: 600px){
+    .item-container{
+        margin: 15px 0px 0px;
+    }
 }

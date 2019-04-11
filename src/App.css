@@ -1,1 +1,13 @@
 @import './css/components/Cards.css';
+@import './css/components/Loading.css';
+@import './css/components/Pagination.css';
+@import url(https://fonts.googleapis.com/css?family=Marvel:regular,italic,700,700italic);
+
+*{
+    font-family: 'Marvel', sans-serif;
+}
+
+.bg-navbar{
+    background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
+    background-blend-mode: multiply;
+}

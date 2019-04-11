@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
 import fetchReducer from './fetchReducer';
+import paginationReducer from './paginationReducer';
 
 export default combineReducers({
-    characters: fetchReducer
+    items: fetchReducer,
+    pager: paginationReducer
 });

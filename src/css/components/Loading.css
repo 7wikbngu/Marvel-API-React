@@ -1,0 +1,54 @@
+.loading-container{
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.loading{
+    height: 10px;
+    width: 10px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background-color: green;
+    transform-style: preserve-3d;
+}
+
+.load1{
+    background-color: #263EA1;
+    animation: yoyo .8s infinite;
+}
+
+.load2{
+    background-color: #227522;
+    animation: yoyo 1s infinite;
+}
+
+.load3{
+    background-color: #ec1b23;
+    animation: yoyo 1.2s infinite;
+}
+
+.load4{
+    background-color: #F3A71D;
+    animation: yoyo 1.4s infinite;
+}
+
+.load5{
+    background-color: #6B3685;
+    animation: yoyo 1.6s infinite;
+}
+
+@keyframes yoyo {
+    from {
+        transform: translate(-50%, -50%)  translate3d(0, 0, 0);
+    }
+
+    50% {
+        transform: scale(1.5)  translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: translate(-50%, -50%)  translate3d(0, 0, 0);
+    }
+}
